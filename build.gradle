@@ -30,7 +30,6 @@ buildscript {
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
     maven {
         url "https://oss.sonatype.org/content/repositories/snapshots"
         mavenContent { snapshotsOnly() }
@@ -74,7 +73,7 @@ apply from: rootProject.file("gradle/dockerjib.gradle")
 
 nativeImage {
     mainClassName = "org.apereo.cas.web.CasWebApplication"
-    toolVersion = "21.1.0"
+    toolVersion = "21.2.0"
     springNativeMode = "reflection"
     reportExceptionStackTraces = true
     removeUnusedAutoConfig = true
@@ -102,6 +101,8 @@ dependencies {
     // Other CAS dependencies/modules may be listed here...
     // implementation "org.apereo.cas:cas-server-support-json-service-registry:${casServerVersion}"
     implementation "org.apereo.cas:cas-server-webapp-init:${casServerVersion}"
+    implementation "org.apereo.cas:cas-server-webapp-init-tomcat:${casServerVersion}"
+    
     implementation "org.springframework.boot:spring-boot-starter-actuator:${project.springBootVersion}"
     implementation "org.springframework.boot:spring-boot-starter-tomcat:${project.springBootVersion}"
     implementation "org.springframework.boot:spring-boot-starter-quartz:${project.springBootVersion}"
