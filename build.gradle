@@ -10,6 +10,10 @@ buildscript {
             mavenContent { releasesOnly() }
         }
         maven {
+            url "https://repo.spring.io/milestone/"
+            mavenContent { releasesOnly() }
+        }
+        maven {
             url "https://repo.spring.io/libs-milestone"
             mavenContent { releasesOnly() }
         }
@@ -84,7 +88,7 @@ springAot {
     mode = AotMode.NATIVE
     mainClass = 'org.apereo.cas.web.CasWebApplication'
     debugVerify = true
-    removeXmlSupport = true
+    removeXmlSupport = false
     removeSpelSupport = false
     removeYamlSupport = false
     removeJmxSupport = true
