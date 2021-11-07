@@ -34,6 +34,7 @@ buildscript {
         classpath "io.freefair.gradle:lombok-plugin:${project.gradleLombokPluginVersion}"
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
         classpath 'org.springframework.experimental.aot:org.springframework.experimental.aot.gradle.plugin:0.11.0-SNAPSHOT'
+        classpath 'org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.7.1'
     }
 }
 
@@ -72,6 +73,7 @@ project.ext."casWebApplicationBinaryName" = casWebApplicationBinaryName
 apply plugin: "io.freefair.lombok"
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'org.springframework.experimental.aot'
+apply plugin: 'org.graalvm.buildtools.native'
 apply from: rootProject.file("gradle/tasks.gradle")
 
 //apply plugin: "war"
@@ -95,6 +97,14 @@ springAot {
     verify = true
 }
 
+nativeBuild {
+//	classpath(processAotResources.outputs, compileAotJava.outputs)
+}
+
+nativeTest {
+//	classpath(processAotTestResources.outputs, compileAotTestJava.outputs)
+}
+
 dependencyManagement {
 	imports {
         mavenBom "org.apereo.cas:cas-server-support-bom:${casServerVersion}"
@@ -114,6 +124,7 @@ dependencies {
     implementation ("org.apereo.cas:cas-server-webapp-starter-tomcat:${casServerVersion}") {
         exclude group : 'org.apereo.cas', module: 'cas-server-support-logging'
         exclude group:  'org.springframework.boot', module: 'spring-boot-devtools'
+        exclude group:  'org.apache.logging.log4j'
     }
     implementation "org.apereo.cas:cas-server-support-logback:${casServerVersion}"
 }
