@@ -122,11 +122,17 @@ dependencies {
     // Other CAS dependencies/modules may be listed here...
     // implementation "org.apereo.cas:cas-server-support-json-service-registry:${casServerVersion}"
     implementation ("org.apereo.cas:cas-server-webapp-starter-tomcat:${casServerVersion}") {
-        exclude group : 'org.apereo.cas', module: 'cas-server-support-logging'
-        exclude group:  'org.springframework.boot', module: 'spring-boot-devtools'
-        exclude group:  'org.apache.logging.log4j'
+        exclude group: 'org.apereo.cas', module: 'cas-server-core-logging'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-devtools'
+        exclude group: 'org.apache.logging.log4j'
     }
     implementation "org.apereo.cas:cas-server-support-logback:${casServerVersion}"
+    implementation "org.springframework.boot:spring-boot-actuator:${project.springBootVersion}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${project.springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot-autoconfigure:${project.springBootVersion}"
+    testImplementation "org.springframework.boot:spring-boot:${project.springBootVersion}"
+
 }
 
 tasks.findByName("jibDockerBuild")
