@@ -89,6 +89,7 @@ def buildChecks = ["default-include-all","!spring.dont.include.these.","!or.thes
 springAot {
     mode = AotMode.NATIVE
     mainClass = 'org.apereo.cas.web.CasWebApplication'
+    applicationClass = 'org.apereo.cas.web.CasWebApplication'
     debugVerify = true
     removeXmlSupport = false
     removeSpelSupport = false
