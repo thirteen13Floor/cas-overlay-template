@@ -23,19 +23,10 @@
       "pattern":"\\QMETA-INF/services/javax.validation.spi.ValidationProvider\\E"
     }, 
     {
-      "pattern":"\\QMETA-INF/services/javax.xml.parsers.SAXParserFactory\\E"
-    }, 
-    {
       "pattern":"\\QMETA-INF/services/javax.xml.stream.XMLInputFactory\\E"
     }, 
     {
       "pattern":"\\QMETA-INF/services/javax.xml.stream.XMLOutputFactory\\E"
-    }, 
-    {
-      "pattern":"\\QMETA-INF/services/javax.xml.validation.SchemaFactory\\E"
-    }, 
-    {
-      "pattern":"\\QMETA-INF/services/org.apache.bval.jsr.metadata.MetadataSource\\E"
     }, 
     {
       "pattern":"\\QMETA-INF/services/org.codehaus.groovy.runtime.ExtensionModule\\E"
@@ -72,9 +63,6 @@
     }, 
     {
       "pattern":"\\Qmozilla/public-suffix-list.txt\\E"
-    }, 
-    {
-      "pattern":"\\Qorg/apache/bval/jsr/valueextraction/DefaultExtractors.properties\\E"
     }, 
     {
       "pattern":"\\Qorg/apache/catalina/core/RestrictedFilters.properties\\E"
@@ -321,6 +309,9 @@
     }, 
     {
       "pattern":"\\Qorg/apereo/cas/config/CasCoreTicketsConfiguration$CasCoreTicketIdGeneratorConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/apereo/cas/config/CasCoreTicketsConfiguration$CasCoreTicketLockingConfiguration.class\\E"
     }, 
     {
       "pattern":"\\Qorg/apereo/cas/config/CasCoreTicketsConfiguration$CasCoreTicketPlanConfiguration.class\\E"
@@ -872,6 +863,9 @@
       "pattern":"\\Qorg/springframework/boot/actuate/autoconfigure/info/InfoEndpointAutoConfiguration.class\\E"
     }, 
     {
+      "pattern":"\\Qorg/springframework/boot/actuate/autoconfigure/integration/IntegrationGraphEndpointAutoConfiguration.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/springframework/boot/actuate/autoconfigure/jdbc/DataSourceHealthContributorAutoConfiguration.class\\E"
     }, 
     {
@@ -1265,6 +1259,39 @@
       "pattern":"\\Qorg/springframework/boot/autoconfigure/info/ProjectInfoAutoConfiguration.class\\E"
     }, 
     {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationComponentScanConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationJdbcConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationJmxConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationManagementConfiguration$EnableIntegrationManagementConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationManagementConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationRSocketConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$IntegrationTaskSchedulerConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration$OnIntegrationDatasourceInitializationCondition.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/integration/IntegrationAutoConfigurationScanRegistrar.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/springframework/boot/autoconfigure/jackson/JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer.class\\E"
     }, 
     {
@@ -1391,6 +1418,9 @@
       "pattern":"\\Qorg/springframework/boot/autoconfigure/security/reactive/ReactiveUserDetailsServiceAutoConfiguration.class\\E"
     }, 
     {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/security/servlet/ErrorPageSecurityFilterConfiguration.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/springframework/boot/autoconfigure/security/servlet/SecurityAutoConfiguration.class\\E"
     }, 
     {
@@ -1514,6 +1544,9 @@
       "pattern":"\\Qorg/springframework/boot/autoconfigure/web/embedded/EmbeddedWebServerFactoryCustomizerAutoConfiguration.class\\E"
     }, 
     {
+      "pattern":"\\Qorg/springframework/boot/autoconfigure/web/reactive/WebSessionIdResolverAutoConfiguration.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/springframework/boot/autoconfigure/web/servlet/DispatcherServletAutoConfiguration$DefaultDispatcherServletCondition.class\\E"
     }, 
     {
@@ -1629,6 +1662,9 @@
     }, 
     {
       "pattern":"\\Qorg/springframework/cloud/autoconfigure/RefreshEndpointAutoConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/cloud/autoconfigure/RestartEndpointWithIntegrationConfiguration$IntegrationPauseHandler.class\\E"
     }, 
     {
       "pattern":"\\Qorg/springframework/cloud/autoconfigure/RestartEndpointWithIntegrationConfiguration.class\\E"
@@ -1892,6 +1928,27 @@
       "pattern":"\\Qorg/springframework/data/web/config/SpringDataWebConfiguration.class\\E"
     }, 
     {
+      "pattern":"\\Qorg/springframework/integration/config/EnableIntegration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/config/EnableIntegrationManagement.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/config/IntegrationComponentScanRegistrar.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/config/IntegrationManagementConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/config/IntegrationRegistrar.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/support/management/micrometer/MicrometerMetricsCaptorConfiguration.class\\E"
+    }, 
+    {
+      "pattern":"\\Qorg/springframework/integration/support/management/micrometer/MicrometerMetricsCaptorImportSelector.class\\E"
+    }, 
+    {
       "pattern":"\\Qorg/springframework/jms/annotation/EnableJms.class\\E"
     }, 
     {
@@ -2027,9 +2084,6 @@
     }, 
     {
       "name":"javax.servlet.http.LocalStrings"
-    }, 
-    {
-      "name":"org.apache.bval.jsr.ValidationMessages"
     }, 
     {
       "name":"org.apache.catalina.authenticator.LocalStrings"

@@ -2,7 +2,7 @@ import org.springframework.aot.gradle.dsl.AotMode
 
 buildscript {
     repositories {
-        mavenLocal()
+        //mavenLocal()
         gradlePluginPortal()
         mavenCentral()
         maven {
@@ -33,13 +33,13 @@ buildscript {
         classpath "io.freefair.gradle:maven-plugin:${project.gradleMavenPluginVersion}"
         classpath "io.freefair.gradle:lombok-plugin:${project.gradleLombokPluginVersion}"
         classpath 'io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE'
-        classpath 'org.springframework.experimental.aot:org.springframework.experimental.aot.gradle.plugin:0.11.0-SNAPSHOT'
-        classpath 'org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.7.1'
+        classpath 'org.springframework.experimental.aot:org.springframework.experimental.aot.gradle.plugin:0.11.2-SNAPSHOT'
+        classpath 'org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.9'
     }
 }
 
 repositories {
-    mavenLocal()
+    //mavenLocal()
     mavenCentral()
     maven {
         url "https://oss.sonatype.org/content/repositories/snapshots"
@@ -117,6 +117,7 @@ dependencies {
         dependencies.each {
             implementation "org.apereo.cas:cas-server-${it}:${casServerVersion}" {
                 exclude group:  'org.springframework.boot', module: 'spring-boot-devtools'
+                exclude group: 'org.apache.bval', module: 'bval-jsr'
             }
         }
     }
@@ -126,10 +127,14 @@ dependencies {
         exclude group: 'org.apereo.cas', module: 'cas-server-core-logging'
         exclude group: 'org.springframework.boot', module: 'spring-boot-devtools'
         exclude group: 'org.apache.logging.log4j'
-    }
-    implementation "org.apereo.cas:cas-server-support-logback:${casServerVersion}"
-    implementation "org.springframework.boot:spring-boot-actuator:${project.springBootVersion}"
+        exclude group: 'org.apache.bval', module: 'bval-jsr'
 
+    }
+    implementation ("org.apereo.cas:cas-server-support-logback:${casServerVersion}") {
+        exclude group: 'org.apache.bval', module: 'bval-jsr'
+    }
+    implementation "org.springframework.boot:spring-boot-actuator:${project.springBootVersion}"
+    implementation 'org.hibernate.validator:hibernate-validator:6.2.0.Final'
     testImplementation "org.springframework.boot:spring-boot-starter-test:${project.springBootVersion}"
     testImplementation "org.springframework.boot:spring-boot-autoconfigure:${project.springBootVersion}"
     testImplementation "org.springframework.boot:spring-boot:${project.springBootVersion}"
